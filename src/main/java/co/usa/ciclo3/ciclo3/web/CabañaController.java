@@ -11,6 +11,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Cabaña")
+@CrossOrigin(origins = "*", methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
+
+
 public class CabañaController {
 
     @Autowired
@@ -22,7 +25,7 @@ public class CabañaController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Cabaña> getCabaña(@PathVariable("ID") int id){
+    public Optional<Cabaña> getCabaña(@PathVariable("id") int id){
         return  cabañaService.getCabaña(id);
     }
 
